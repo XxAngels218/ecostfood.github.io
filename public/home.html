@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Header</title>
+    <link rel="stylesheet" href="build/styles.css" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+
+<body>
+    <nav x-data="{open: false}" class="sticky z-10 w-full bg-secondary text-gray-100">
+        <div class="px-2 bg-secondary text-white flex justify-between items-center">
+            <div class="text-primary">EcostFood</div>
+            <div class="text-xl" @click="open = true"><button>&equiv;</button></div>
+        </div>
+        <div x-show="open" @click.away="open = false">
+            <div class="my-1 mx-2">
+                <input class="form-control" type="search" placeholder="Search">
+            </div>
+            <div class="my-1 mx-2 md:flex justify-around">
+                <div class="flex">
+                    Precio:
+                    <div class="ml-2">$</div>
+                    <div class="ml-2  text-primary">$$</div>
+                    <div class="ml-2">$$$</div>
+                    <div class="ml-2">$$$$</div>
+                </div>
+                <div class="flex">
+                    <div class="">
+                        Calificacion
+                    </div>
+                    <div class="ml-2 text-primary">&starf;</div>
+                    <div class="ml-px text-primary">&starf;</div>
+                    <div class="ml-px text-primary">&starf;</div>
+                    <div class="ml-px text-primary">&starf;</div>
+                    <div class="ml-px">&star;</div>
+                </div>
+                <div>
+                    <button class="btn bg-yellow-600">Filtrar</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="">
+        <div class="h-56 md:h-100 md:bg-center bg-cover bg-no-repeat bg-bottom" style="
+          background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80');
+        "></div>
+        <div class="container mx-auto md:flex">
+
+            <div class="mx-2 md:mx-0 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg">
+                <div>
+                    <img class="w-full md:w-48 md:h-full rounded-lg md:rounded-r-sm"
+                        src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&h=500&q=80"
+                        alt="" />
+                </div>
+                <div class="relative mx-2 p-2 md:shadow-none shadow-xl bg-white md:bg-transparent rounded-lg -mt-2">
+                    <h2 class="md:text-lg text-2xl tracking-tight uppercase font-semibold text-gray-900">
+                        Hamburguesa con queso
+                    </h2>
+                    <p class="text-gray-700 leading-snug">
+                        Hamburguesa con queso y aderezo chipotle.
+                    </p>
+                    <div class="mt-2 text-sm font-semibold text-gray-700">USD $7</div>
+                    <div class="mt-2 text-yellow-700 text-sm">
+                        &starf;&starf;&starf;&starf;&star; / 36 Calificacion
+                    </div>
+                </div>
+            </div>
+
+            <div class="mx-2 md:mx-0 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg">
+                <div>
+                    <img class="w-full md:w-48 md:h-full rounded-lg md:rounded-r-sm"
+                        src="https://www.simplyrecipes.com/thmb/B1MNN_cYC3zgDw8XX1CKiU8tikE=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2008__10__chicken-pasta-thyme-mint-horiz-a-1600-64488c588086456ebc53402f2de90e0a.jpg"
+                        alt="" />
+                </div>
+                <div class="relative mx-2 p-2 md:shadow-none shadow-xl bg-white md:bg-transparent rounded-lg -mt-2">
+                    <h2 class="md:text-lg text-2xl tracking-tight uppercase font-semibold text-gray-900">
+                        Chicken Pasta
+                    </h2>
+                    <p class="text-gray-700 leading-snug">
+                        Chicken Pasta con thyme-mint cream salsa.
+                    </p>
+                    <div class="mt-2 text-sm font-semibold text-gray-700">USD $10</div>
+                    <div class="mt-2 text-yellow-700 text-sm">
+                        &starf;&starf;&starf;&starf;&star; / 22 Calificacion
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="container mx-auto mt-4 mx-2">
+            <div>
+                <div>Nombre</div>
+                <input class="form-control" type="text" placeholder="Nombre">
+
+            </div>
+            <div>
+                <div>Email</div>
+                <input class="form-control" type="email" placeholder="Email">
+
+            </div>
+            <div>
+                <div>Comentarios</div>
+                <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div>
+                <button class="btn btn-primary mx-auto">Enviar</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="w-full text-white bg-secondary">
+        <div class="md:flex md:flex-row-reverse justify-around">
+            <div class="mt-4 ml-8">
+                <div class="hover:text-primary cursor-pointer transition ease-out duration-200">
+                    <i class="fa fa-facebook"></i> @EcostFood
+                </div>
+                <div class="hover:text-primary cursor-pointer transition ease-out duration-200">
+                    <i class="fa fa-twitter"></i> @EcostFood
+                </div>
+                <div class="hover:text-primary cursor-pointer transition ease-out duration-200">
+                    <i class="fa fa-instagram"></i> @EcostFood
+                </div>
+            </div>
+            <ul class="mt-4 mb-4 ml-8 md:list-disc">
+                <li>Soporte</li>
+                <li>Acerca de nosotros</li>
+                <li>Registro</li>
+                <li>Aviso de Privacidad</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
